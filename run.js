@@ -21,18 +21,21 @@ const run = async (command, params) => {
 
   const { code, desc, data } = result.openXML.reply
 
-  if (!data) {
+  if (code > 0) {
     throw new Error(`${desc} (${code})`)
   }
 
   const {
-    total,
-    results: { array: { item } }
+    id, status,
+    total, results
   } = data
 
-  console.log(`Result has '${total}' items`)
+  console.log(`Result has '${total}' items and id ${id} with status ${status}`)
 
-  return {code, desc, total, data: item}
+  return {
+    id, status,
+    total, results: results && results.array && results.array.item
+  }
 }
 
 const argv = require('minimist')(process.argv.slice(2))
