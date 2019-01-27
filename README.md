@@ -8,7 +8,7 @@ This fork adds CLI support through yarn/npm run scripts. See CLI Usage.
 
 ## Setup
 
-`yarn add @devotis/openprovider`
+First install:  `yarn add @devotis/openprovider`
 
 Then in your app's `package.json` file add a `op` command in the `scripts` section.
 
@@ -21,6 +21,8 @@ Then in your app's `package.json` file add a `op` command in the `scripts` secti
   ...
 }
 ```
+
+Finally add a `.env` file similar to `.env.example` and enter username, password and/or hash.
 
 ## Usage
 
@@ -38,3 +40,8 @@ For all available api commands, see: https://doc.openprovider.eu/index.php/Main_
 ### Usage in code
 
 [Example request code here (examples/example.js)](examples/example.js)
+
+## FAQ
+
+### I get Error: Authentication/Authorization Failed (196)
+Create a `.env` file similar to `.env.example` and enter username, password and/or hash.
