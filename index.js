@@ -1,6 +1,4 @@
-'use strict'
-const Promise = require('bluebird')
-const request = require('superagent-promise')(require('superagent'), Promise)
+const request = require('superagent')
 const xml2js = require('xml2js')
 const builder = new xml2js.Builder()
 const parser = new xml2js.Parser()
