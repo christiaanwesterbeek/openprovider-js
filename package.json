@@ -1,24 +1,34 @@
 {
-  "name": "openprovider",
-  "version": "1.0.0",
+  "name": "@devotis/openprovider",
+  "version": "1.1.2",
   "description": "Openprovider api client",
   "main": "index.js",
+  "engines": {
+    "yarn": ">=1",
+    "node": ">=6"
+  },
   "keywords": [
-    "openprovider"
+    "openprovider",
+    "cli"
   ],
-  "author": "Tim Neutkens",
+  "author": "Christiaan Westerbeek <chris@devotis.nl>",
+  "contributors": [
+    "Tim Neutkens"
+  ],
+  "private": false,
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/timneutkens/openprovider-js"
+    "url": "https://github.com/christiaanwesterbeek/openprovider-js"
   },
   "scripts": {
     "op": "node ./run"
   },
   "dependencies": {
-    "bluebird": "^3.3.1",
+    "chalk": "2.4.2",
+    "dotenv": "6.2.0",
+    "minimist": "1.2.0",
     "superagent": "^4.1.0",
-    "superagent-promise": "^1.1.0",
     "xml2js": "^0.4.16"
   },
   "devDependencies": {
