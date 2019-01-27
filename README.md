@@ -14,6 +14,8 @@ Uses es2015 / es6 classes. You might need to use [Babel](https://babeljs.io/) if
 
 `yarn op searchDomainRequest --domainNamePattern %mydomain%`
 
+`yarn op modifyDomainRequest --isPrivateWhoisEnabled 1 --domain.name mydomain --domain.extension com`
+
 This is following the pattern:
 `yarn op <api command> --arg1 <arg1_value> --arg2 <arg2_value> --argn <argn_value>`
 
