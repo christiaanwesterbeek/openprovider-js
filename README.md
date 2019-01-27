@@ -6,9 +6,21 @@
 Forked from the archived repo https://github.com/timneutkens/openprovider-js .
 This fork adds CLI support through yarn/npm run scripts. See CLI Usage.
 
-## Install
+## Setup
 
 `yarn add @devotis/openprovider`
+
+Then in your app's `package.json` file add a `op` command in the `scripts` section.
+
+```
+{
+  ...
+  "scripts": {
+    "op": "node ./node_modules/@devotis/openprovider/run"
+  },
+  ...
+}
+```
 
 ## Usage
 
