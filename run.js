@@ -19,18 +19,20 @@ const run = async (command, params) => {
   console.log(`Running '${command}' with params ${JSON.stringify(params)}...`)
   const result = await OpenproviderClient.request(command, params)
 
+  const { code, desc, data } = result.openXML.reply
+
+  if (!data) {
+    throw new Error(`${desc} (${code})`)
+  }
+
   const {
-    code,
-    desc,
-    data: {
-      total,
-      results: { array: { item: results } }
-    }
-  } = result.openXML.reply
+    total,
+    results: { array: { item } }
+  } = data
 
-  console.log(`Result desc: '${desc}', code: '${code}' total: '${total}'`)
+  console.log(`Result has '${total}' items`)
 
-  return {code, desc, total, results}
+  return {code, desc, total, data: item}
 }
 
 const argv = require('minimist')(process.argv.slice(2))
