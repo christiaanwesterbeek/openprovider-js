@@ -1,12 +1,14 @@
-# Openprovider.js
+# OpenProvider CLI and API for Node.js
 ![Code Climate](https://img.shields.io/codeclimate/github/timneutkens/openprovider-js.svg) ![Dependencies](https://img.shields.io/david/timneutkens/openprovider-js.svg)
 [![Js Standard Style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 ![Version](https://img.shields.io/npm/v/openprovider.svg) ![License](https://img.shields.io/npm/l/openprovider.svg)
 
+Forked from the archived repo https://github.com/timneutkens/openprovider-js .
+This fork adds CLI support through yarn/npm run scripts. See CLI Usage.
 
-Openprovider api implementation for javascript. Based on [Superagent](https://github.com/visionmedia/superagent) and [Promises (bluebird)](https://github.com/petkaantonov/bluebird)
+## Install
 
-Uses es2015 / es6 classes. You might need to use [Babel](https://babeljs.io/) if you're using an old version of node.js / in browsers
+`yarn add @devotis/openprovider`
 
 ## Usage
 
@@ -24,11 +26,3 @@ For all available api commands, see: https://doc.openprovider.eu/index.php/Main_
 ### Usage in code
 
 [Example request code here (examples/example.js)](examples/example.js)
-
-## Install
-
-`yarn add openprovider`
-
-## License
-MIT
-[View here](LICENSE.md)
