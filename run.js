@@ -1,4 +1,6 @@
 require('dotenv').config()
+const chalk = require('chalk')
+const log = console.log
 
 // Require client
 const Openprovider = require('./index')
@@ -16,7 +18,7 @@ const OpenproviderClient = new Openprovider(config)
 
 // Example dns request using promises
 const run = async (command, params) => {
-  console.log(`Running '${command}' with params ${JSON.stringify(params)}...`)
+  log(chalk`Running {green ${command}} with params {green ${JSON.stringify(params)}}...`)
   const result = await OpenproviderClient.request(command, params)
 
   const { code, desc, data } = result.openXML.reply
@@ -30,11 +32,23 @@ const run = async (command, params) => {
     total, results
   } = data
 
-  console.log(`Result has '${total}' items and id ${id} with status ${status}`)
+  const deepResults = results && results.array && results.array.item
+
+  if (results != null && id) {
+    log(chalk`Result has {green ${total}} items and id {green ${id}} with status {green ${status}}`)
+    log(deepResults)
+  } else if (results != null) {
+    log(chalk`Result has {green ${total}} items`)
+    log(deepResults)
+  } else if (id) {
+    log(chalk`Result has id {green ${id}} with status {green ${status}}`)
+  } else {
+    log(data)
+  }
 
   return {
     id, status,
-    total, results: results && results.array && results.array.item
+    total, results: deepResults
   }
 }
 
@@ -43,9 +57,6 @@ const argv = require('minimist')(process.argv.slice(2))
 const { _: [command], ...params } = argv
 
 run(command, params)
-  .then((result) => {
-    console.log(result)
-  })
   .catch((error) => {
-    console.log(error)
+    log(chalk.red(error))
   })
