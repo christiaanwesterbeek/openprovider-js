@@ -1,6 +1,6 @@
 {
   "name": "@devotis/openprovider",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "Openprovider api client",
   "main": "index.js",
   "engines": {
@@ -19,7 +19,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/devotis/openprovider-js"
+    "url": "https://github.com/christiaanwesterbeek/openprovider-js"
   },
   "scripts": {
     "op": "node ./run"
